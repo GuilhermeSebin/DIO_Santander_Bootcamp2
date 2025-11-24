@@ -57,10 +57,13 @@ Sub-redes:
 Permite realizar conexões com a internet.
 Para conexões com as redes VPC, o utiliza-se, junto com o Gateway, um VPN.
 
-![[Pasted image 20251124094041.png]]
+
+<img width="888" height="441" alt="Pasted image 20251124094041" src="https://github.com/user-attachments/assets/7605f353-6ceb-43f1-914f-468474d519e9" />
+
 
 **AWS Direct Connect**
-![[Pasted image 20251124094121.png]]
+<img width="910" height="442" alt="Pasted image 20251124094121" src="https://github.com/user-attachments/assets/39b5c097-24cb-4c12-95c0-56fc86aa63b0" />
+
 Permite uma conexão dedicada entre a nuvem AWS e servidores privados.
 Necessita da disponibilidade entre provedores de internet parceiros dos serviços AWS
 
