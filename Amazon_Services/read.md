@@ -8,7 +8,8 @@ Melhora performance do serviço.
 **Route 53**
 Serviço de DNS que redireciona corretamente as requisições de acesso.
 
-### Provisionamento de Recursos AWS 
+### Provisionamento de Recursos AWS
+** 
 
 ## Elastic Compute Cloud (EC2)
 Serviço de computação na AWS. 
@@ -57,13 +58,10 @@ Sub-redes:
 Permite realizar conexões com a internet.
 Para conexões com as redes VPC, o utiliza-se, junto com o Gateway, um VPN.
 
-
-<img width="888" height="441" alt="Pasted image 20251124094041" src="https://github.com/user-attachments/assets/7605f353-6ceb-43f1-914f-468474d519e9" />
-
+![[Pasted image 20251124094041.png]]
 
 **AWS Direct Connect**
-<img width="910" height="442" alt="Pasted image 20251124094121" src="https://github.com/user-attachments/assets/39b5c097-24cb-4c12-95c0-56fc86aa63b0" />
-
+![[Pasted image 20251124094121.png]]
 Permite uma conexão dedicada entre a nuvem AWS e servidores privados.
 Necessita da disponibilidade entre provedores de internet parceiros dos serviços AWS
 
@@ -117,6 +115,80 @@ Backup Incremental
 	- referencia os backups com imagens "antigas", permitindo recuperar instâncias completas de acordo com a passagem temporal.
 
 ### Amazon S3 (Simple Storage Service)
-Objeto no S3: um dado que pode ser de qualquer tipo (dados, metadados e chave)
+Objeto no S3: um dado que pode ser de qualquer tipo.
+- Chave: nome atribuído ao objeto, usado para recuperar o objeto
+- Valor: conteúdo armazenado
+- Metadados: conjunto de par nome-valor para armazenar informações sobre o objeto
+
+##### Buckets S3
+É um contêiner para objetos armazenados.
+Objetos podem ter de 0 a 5TB de tamanho.
+Máximo de 100 buckets no serviço ou pedir aumento de buckets.
+- Controle de acesso por objeto
+- Versionamento de objeto (permite criação de versões de objetos conforme alterações)
+
+**Classes de Armazenamento**
+Direcionada às necessidades de negócio.
+Leva em consideração disponibilidade e frequência de acesso:
+- S3 Standard: acesso com frequência, armazenamento em pelo menos 3 AZ, maior custo.
+- S3 Standard-Infrequent Access: mínimo de 3 AZ, acesso pouco frequente, cobrado por GB de armazenamento.
+- S3 One Zone-Infrequent Access: menor custo, 1 AZ, baixa frequência de acesso.
+- S3 Intelligent-Tiering: dados com padrões de acesso desconhecidos ou em alteração, gerencia automaticamente o ciclo de vida dos objetos, requer taxa mensal de monitoramento e automação por objeto (de acordo com o acesso, os objetos são colocados em categorias de maior ou menor custo).
+- S3 Glacier Instant Retrieval: dados de longa duração raramente acessados com recuperação rápida, ideal para dados acessados uma vez por trimestre.
+- S3 Glacier Flexible Retrieval: dados sem necessidade de acesso imediato, ideal para backups não urgentes e recuperação de desastres.
+- S3 Glacier Deep Archive: preservação digital de longo prazo, recuperação de dados em até 12h.
 
 
+#### EFS - Amazon Elastic File System
+Sistema de arquivos elástico e servless. Capacidade de Pentabytes e aumenta conforme adição e remoção de arquivos.
+Compatível com NFS (network file system).
+Pode ser acessado por EC2, Lambda, ECS.
+Acesso simultâneo aos dados sem queda de performance.
+- Padrão de Instância - Standard e Standard Infrequent Access
+- Uma AZ
+
+#### Amazon Relational Database Service (RDS)
+- facilita configuração e provisionamento de hardware
+- patches automatizados
+- backups
+- redundância
+- failover e recuperação de desastres
+Compatível com MySQL, Microsoft SQL, PostgreSQL
+
+#### Amazon Aurora
+- serverless
+- PostgreSQL e MySQL
+- mais barato
+- replicação multi-regional
+- backup contínuo via S3
+- até 15 réplicas de leitura
+
+### DynamoDB
+- NoSQL
+- serverless
+- escala automaticamente
+- replicação de dados regional
+
+
+### Outros serviços
+Necessidade do negócio escolhe o tipo de banco de dados.
+**Amazon Document DB**
+- compatível com MongoDB
+- BD de documentos
+**Amazon Neptune**
+- redes sociais, mecanismos de recomendações
+- BD de grafos
+**Amazon QLDB (quantum Ledger DB)**
+- BD de serviços Ledger
+- Dados são imutáveis
+**Amazon DynamoDB Accelerator** (DAX)
+- camada de cache nativa para otimizar tempo de leitura de dados
+**Amazon Elasticache**
+- Camada de cache sobre BD relacionais
+- Compatível com Redis e Memcached
+**
+
+### BigData com Amazon Redshift
+Serviço de Data Warehouse para análises de dados
+Coleta informações de muitas fontes
+Projeta relações e tendências de dados
