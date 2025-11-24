@@ -5,7 +5,7 @@ Empresa: **Abstergo Industries**
 Responsável: **Guilherme Sebin**
 
 ## Introdução
-Este relatório apresenta o processo de implementação de ferramentas na empresa **Abstergo Industries**, realizado por **[Seu Nome Aqui]**. O objetivo do projeto foi elencar 3 serviços AWS, com a finalidade de realizar **diminuição de custos imediatos** através da otimização de infraestrutura, armazenamento e licenciamento.
+Este relatório apresenta o processo de implementação de ferramentas na empresa **Abstergo Industries**, realizado por **Guilherme Sebin**. O objetivo do projeto foi elencar 3 serviços AWS, com a finalidade de realizar **diminuição de custos imediatos** através da otimização de infraestrutura, armazenamento e licenciamento.
 
 ## Descrição do Projeto
 O projeto de implementação de ferramentas foi dividido em 3 etapas, cada uma com seus objetivos específicos. A seguir, serão descritas as etapas do projeto:
